@@ -1,0 +1,413 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-10-22 08:42:01",
+    "containerVersion": {
+        "path": "accounts/6002261408/containers/33161461/versions/0",
+        "accountId": "6002261408",
+        "containerId": "33161461",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6002261408/containers/33161461",
+            "accountId": "6002261408",
+            "containerId": "33161461",
+            "name": "sayinstitute.cgwebdesign.org",
+            "publicId": "GTM-MLBGJMQ",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1602598800762",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6002261408/containers/33161461/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "tagId": "40",
+                "name": "GA - PageView - ALL",
+                "type": "ua",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "1000"
+                },
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Tracking ID}}"
+                    }
+                ],
+                "fingerprint": "1603118782631",
+                "firingTriggerId": [
+                    "49"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "tagId": "47",
+                "name": "CH - CookieOverlay - ALL",
+                "type": "html",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "2001"
+                },
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "\n<!-- Add Style Here -->\n<style>\n#cookie-overlay {\n  opacity: 1;\n  visibility: visible;\n  position: fixed;\n  z-index: 999999999999999;\n  bottom: 0px;\n  background: white;\n  width: 100%;\n  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);\n}\n\n.cookie-overlay-text {\n  margin: 0 auto;\n  width: 100%;\n  padding: 10px;\n  max-width: 1200px;\n}\n.cookie-overlay-text p {\n  margin: 0 0 10px 0;\n  border-bottom: 1px solid #f2f2f2;\n  padding-bottom: 10px;\n}\n.cookie-overlay-buttons {\n  text-align: left;\n  display:inline-block;\n}\n  \n.cookie-overlay-buttons .ctabtn {\n    padding: 15px 20px;\n}\n  \n.cookie-overlay-text .settings {\n     cursor: pointer;\n    text-decoration: underline;\n    display: inline-block;\n    margin: 10px 0 0 0;\n}\n.cookie-overlay-text ul {\n  padding:0;\n  margin:0;\n display:inline-block;\n}\n.cookie-overlay-text li {\n  display: inline-block;\n  list-style-type: none;\n  margin: 10px 20px 0 0;\n}\n.cookie-overlay-text input[type=\"checkbox\"] {\n  vertical-align: middle;\n}\n.cookie-overlay-text input[type=\"checkbox\"][disabled] + label {\n  color: #ccc;\n}\n.cookie-overlay-buttons {\n  float: right;\n}\n</style>\n\n<!-- Add content Here -->\n<div id=\"cookie-overlay\" class=\"p-1\" style=\"display:none;\">\n  <div class=\"cookie-overlay-text\">\n    <p>Our website uses basic, necessary cookies to function. However we'd also like to share information about your use of our site with our select third parties and analytics partners to improve your experience, you can opt-in of this tracking below. For full details, read our Cookie Policy & Privacy Policy</p>\n    <span class=\"settings\">Cookie Settings</span>\n    <ul style=\"display:none;\">\n    <li>\n      <input id=\"nFunctionalCookies\" type=\"checkbox\" checked=\"true\" disabled=\"disabled\">\n      <label for=\"nFunctionalCookies\">Functional Cookies</label>\n    </li>\n    <li>\n      <input id=\"nAnalyticsCookies\" type=\"checkbox\" checked=\"true\">\n      <label for=\"nAnalyticsCookies\">Analytics Cookies</label>\n    </li>\n    <li>\n      <input id=\"nAdvertisementCookies\" type=\"checkbox\" checked=\"true\">\n      <label for=\"nAdvertisementCookies\">Marketing Cookies</label>\n    </li>\n          </ul>\n\n    <span class=\"cookie-overlay-buttons\">\n      <button id=\"accept\" class=\"ctabtn grn cookie-overlay-button\">Accept</button>\n      <!-- <button id=\"decline\" class=\"cookie-overlay-button\">Decline</button> -->\n    </span>\n  </div>\n</div>\n\n<!-- Add Custom JS Here -->\n<script>\n    \n setTimeout(function () {\n  jQuery(\"#cookie-overlay\").fadeIn(\"show\");\n}, 5000);\n\njQuery(\".cookie-overlay-text .settings\").click(function(){\n  jQuery(\".cookie-overlay-text .settings\").hide();\n  jQuery(\".cookie-overlay-text ul\").show();\n});\n\njQuery(\"#accept\").on(\"click\", function () {\n  jQuery(\"#cookie-overlay\").hide();\n  {\n    {\n      CJS - cookieSetter;\n    }\n  }\n  \"nCookieConsent\", \"true\", 365, \"/\", \".{{Page Hostname}}\";\n  {\n    {\n      CJS - cookieSetter;\n    }\n  }\n  \"nFunctionalCookies\", \"true\", 365, \"/\", \".{{Page Hostname}}\";\n\n  if (jQuery(\"#nAnalyticsCookies\").is(\":checked\") == true) {\n    {\n      {\n        CJS - cookieSetter;\n      }\n    }\n    \"nAnalyticsCookies\", \"true\", 365, \"/\", \".{{Page Hostname}}\";\n  } else {\n    {\n      {\n        CJS - cookieSetter;\n      }\n    }\n    \"nAnalyticsCookies\", \"false\", 365, \"/\", \".{{Page Hostname}}\";\n  }\n\n  if (jQuery(\"#nAdvertisementCookies\").is(\":checked\") == true) {\n    {\n      {\n        CJS - cookieSetter;\n      }\n    }\n    \"nAdvertisementCookies\", \"true\", 365, \"/\", \".{{Page Hostname}}\";\n  } else {\n    {\n      {\n        CJS - cookieSetter;\n      }\n    }\n    \"nAdvertisementCookies\", \"false\", 365, \"/\", \".{{Page Hostname}}\";\n  }\n});\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1603355754671",
+                "firingTriggerId": [
+                    "48"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "triggerId": "48",
+                "name": "PageView - nCookieConsent - is undefined",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{CKI - nCookieConsent}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "undefined"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1603118484797"
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "triggerId": "49",
+                "name": "PageView - nCookieConsent and nAnalyticsCookies - is true",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{CKI - nCookieConsent}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{CKI - nAnalyticsCookies}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1603118596707"
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "triggerId": "51",
+                "name": "PageView - nCookieConsent and nAdvertisementCookies - is true",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{CKI - nCookieConsent}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{CKI - nAdvertisementCookies}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1603119570135"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "variableId": "42",
+                "name": "CJS - cookieSetter",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  return function(name, value, exdays, path, domain) {\n    if (!name || !value) {\n      return;\n    }\n    var d;\n    var cpath = path ? '; path=' + path : '';\n    var cdomain = domain ? '; domain=' + domain : '';\n    var expires = '';\n    if (exdays) {\n      d = new Date();\n      d.setTime(d.getTime() + (exdays*24*60*60*1000));\n      expires = '; expires=' + d.toUTCString();\n    }\n    document.cookie = name + \"=\" + value + expires + cpath + cdomain;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1603118057666",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "variableId": "43",
+                "name": "CKI - nCookieConsent",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "nCookieConsent"
+                    }
+                ],
+                "fingerprint": "1603118116515",
+                "formatValue": {
+                    "caseConversionType": "LOWERCASE"
+                }
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "variableId": "44",
+                "name": "CKI - nFunctionalCookies",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "nFunctionalCookies"
+                    }
+                ],
+                "fingerprint": "1603118167875",
+                "formatValue": {
+                    "caseConversionType": "LOWERCASE",
+                    "convertUndefinedToValue": {
+                        "type": "TEMPLATE",
+                        "value": "true"
+                    },
+                    "convertFalseToValue": {
+                        "type": "TEMPLATE",
+                        "value": "true"
+                    }
+                }
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "variableId": "45",
+                "name": "CKI - nAnalyticsCookies",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "nAnalyticsCookies"
+                    }
+                ],
+                "fingerprint": "1603118203166",
+                "formatValue": {
+                    "caseConversionType": "LOWERCASE",
+                    "convertUndefinedToValue": {
+                        "type": "TEMPLATE",
+                        "value": "false"
+                    }
+                }
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "variableId": "46",
+                "name": "CKI - nAdvertisementCookies",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "nAdvertisementCookies"
+                    }
+                ],
+                "fingerprint": "1603118232160",
+                "formatValue": {
+                    "caseConversionType": "LOWERCASE",
+                    "convertUndefinedToValue": {
+                        "type": "TEMPLATE",
+                        "value": "false"
+                    }
+                }
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "variableId": "50",
+                "name": "Tracking ID",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-12345-12"
+                    }
+                ],
+                "fingerprint": "1603118775354"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6002261408",
+                "containerId": "33161461",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1603356121933",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6002261408/containers/33161461/versions/0?apiLink=version"
+    }
+}
